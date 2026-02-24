@@ -5,8 +5,7 @@ manifest:
   projects:
     - name: zmk
       remote: zmkfirmware
-      revision: main
+      revision: 39a14154a98479b864fba7735717e5147f6c0c14
       import: app/west.yml
   self:
     path: config
-# Forzar limpieza de cache
