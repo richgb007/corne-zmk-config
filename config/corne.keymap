@@ -23,8 +23,8 @@
             label = "HOMEROW_MODS";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            quick-tap-ms = <0>;
-            flavor = "hold-preferred"; // <--- Corregido para evitar la ametralladora de letras
+            quick-tap-ms = <200>;
+            flavor = "tab-preferred";
             bindings = <&kp>, <&kp>;
         };
     };
