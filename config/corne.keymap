@@ -66,7 +66,7 @@
 //         (Super)    (Alt)      (Ctrl)      (Shift)                               (Shift)     (Ctrl)      (Alt)      (Ñ)         (Acento ´)
 &kp TAB    &hm LGUI A &hm LALT S &hm LCTRL D &hm LSHFT F &kp G        &kp H    &hm RSHFT J &hm RCTRL K &hm RALT L &hm RGUI SEMI &kp LBKT
 // Shift       z          x          C           V           B            N        M            ,          .          -             /
-&kp LSHFT  &kp Z      &kp X      &kp C       &kp V       &kp B        &kp N    &kp M       &kp COMMA   &kp DOT    &kp SLASH     &kp MINUS
+&kp LSHFT  &kp Z      &kp X      &kp C       &kp V       &kp B        &kp N    &kp M       &kp COMMA   &kp DOT    &kp SLASH     &kp LS(N7)
                                  &kp LCTRL   &td_nav     &kp SPACE    &kp RET  &td_sym     &kp LALT
             >;
         };
@@ -74,11 +74,11 @@
         lower_layer {
             // Capa 1: Símbolos y Números (Pulgar Izquierdo)
             bindings = <
-//    \             \#               $             [           ]             "                  /        7          8        6         -           BSPC
-&kp RA(MINUS) &kp LS(N3)       &kp LS(N4)      &kp RA(SQT) &kp RA(BSLH) &kp LS(N2)       &kp SLASH    &kp N7   &kp N8   &kp N9  &kp MINUS     &kp BSPC
-//    @             &                |             {           }            '                * 4        5        6       +             DEL
-&kp RA(Q)     &kp LS(N7)       &kp GRAVE       &kp SQT     &kp BSLH     &kp MINUS        &kp LS(RBKT) &kp N4   &kp N5   &kp N6  &kp LS(MINUS) &kp DEL
-//     %          <                 >             (          )            =                  ,          1        2        3       .             !
+//    \             \#               $             [           ]             "                  /         7        8        9         -          BSPC
+&kp RA(MINUS) &kp LS(N3)       &kp LS(N4)      &kp LS(SQT) &kp LS(BSLH) &kp LS(N2)       &kp LS(N7)   &kp N7   &kp N8   &kp N9  &kp SLASH    &kp BSPC
+//    @             &                |             {           }            '                *            4        5        6       +             DEL
+&kp RA(Q)     &kp LS(N7)       &kp GRAVE       &kp SQT     &kp BSLH     &kp MINUS        &kp LS(RBKT) &kp N4   &kp N5   &kp N6  &kp LS(EQUAL) &kp DEL
+//     %          <                 >             (          )            =                  ,            1        2        3       .             !
 &kp LS(N5)    &kp NON_US_BSLH  &kp LS(NON_US_BSLH) &kp LS(N8) &kp LS(N9) &kp LS(N0)      &kp COMMA    &kp N1   &kp N2   &kp N3  &kp DOT       &kp LS(N1)
                                                &kp LCTRL   &trans       &kp SPACE        &kp RET      &trans   &kp N0
             >;
@@ -87,25 +87,74 @@
         raise_layer {
             // Capa 2: Funciones y Movimientos (Pulgar Derecho)
             bindings = <
-//         ( ! )      ( @ )      ( # )       ( $ )       ( % )           ( ( )      ( ) )     ( { )             ( } )        ( -> )       (Borrar BT)
-&trans     &kp F1     &kp F2     &kp F3      &kp F4      &trans          &kp HOME   &kp INS   &kp UP            &kp DEL      &kp PG_UP    &kp BSPC
-//         ( | )      ( _ )         ( = )                                ( [ )      ( ] )     ( < )             ( > )             ( => )       (BT 0)
-&trans     &kp F5     &kp F6     &kp F7      &kp F8      &trans          &kp END    &kp LEFT  &kp DOWN          &kp RIGHT    &kp PG_DN    &trans
+//                                                           `
+&trans     &kp F1     &kp F2     &kp F3      &kp F4      &kp RA(BSLH)        &kp HOME   &kp INS   &kp UP            &kp DEL      &kp PG_UP    &kp BSPC
+//                                                           ^
+&trans     &kp F5     &kp F6     &kp F7      &kp F8      &kp RA(SQT)         &kp END    &kp LEFT  &kp DOWN          &kp RIGHT    &kp PG_DN    &trans 
 //
-&trans     &kp F9     &kp F10    &kp F11     &kp F12     &kp LGUI        &kp PSCRN  &kp SLCK  &kp PAUSE_BREAK   &trans       &trans       &trans
+&trans     &kp F9     &kp F10    &kp F11     &kp F12     &trans              &kp PSCRN  &kp SLCK  &kp PAUSE_BREAK   &trans       &trans       &trans
 //
-                                 &kp LCTRL   &trans      &kp SPACE       &kp RET    &trans    &kp LALT
+                                 &kp LCTRL   &trans      &kp SPACE           &kp RET    &trans    &kp LALT
             >;
         };
 
         adjust_layer {
             // Capa 3: Activada al presionar pulgar izquierdo y derecho a la vez
             bindings = <
-&kp R      &kp F13    &kp F14    &kp F15     &kp F16     &kp F17      &kp F18    &kp F19     &kp F20     &kp F21    &kp F22       &kp F23
-&trans     &trans     &trans     &trans      &trans      &trans       &trans     &trans      &trans      &trans     &trans        &kp F24
-&trans     &trans     &trans     &trans      &trans      &trans       &trans     &trans      &trans      &trans     &trans        &trans
-                                 &trans      &trans      &trans       &trans     &trans      &trans
+&kp F13    &kp F14    &kp F15    &kp F16     &kp F17     &kp F18           &kp F19    &kp F20     &kp F21     &kp F22    &kp F23     &kp F24
+&trans     &trans     &trans     &trans      &trans      &trans            &trans     &trans      &trans      &trans     &trans      &trans 
+&trans     &trans     &trans     &trans      &trans      &trans            &trans     &trans      &trans      &trans     &trans      &trans
+                                 &trans      &trans      &trans            &trans     &trans      &trans
             >;
         };
     };
 };
+
+
+/*
+    // [L_BASE] = LAYOUT_split_3x6_3(      HR: LGUI LALT LCTRL LSHIFT         RSHIFT RCTRL RALT RGUI
+    //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+    //   KC_ESC,    KP_Q,    KP_W,    KP_E,    KP_R,    KP_T,                         KP_Y,    KP_U,    KP_I,    KP_O,   KP_P,  KP_BSPC,
+    //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+    //   KC_TAB,    KP_A,    KP_S,    KP_D,    KP_F,    KP_G,                         KP_H,    KP_J,    KP_K,    KP_L, KP_NTIL, KP_ACUT,
+    //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+    //  KC_LSFT,    KP_Z,    KP_X,    KP_C,    KP_V,    KP_B,                         KP_N,    KP_M, KP_COMM,  KP_DOT, KP_MINS,KP_SLASH,
+    //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                        //  KC_LGUI,   MO(1),  KC_SPC,     KC_ENT,   MO(2), KC_LALT
+                                        //`--------------------------'  `--------------------------'
+
+    // [L_UPPER] = LAYOUT_split_3x6_3(
+    //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+    //   KC_ESC,   KC_F1,   KC_F2,   KC_F3,   KC_F4,  KC_APP,                       KC_INS, KC_HOME,   KC_UP,  KC_END, KC_PGUP, KC_BSPC,
+    //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+    //  KC_LCTL,   KC_F5,   KC_F6,   KC_F7,   KC_F8, KC_PSCR,                       KC_DEL, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, ES_DIAE,
+    //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+    //  KC_LSFT,   KC_F9,  KC_F10,  KC_F11,  KC_F12, KC_PAUS,                      XXXXXXX, XXXXXXX, ES_SCLN, ES_COLN, ES_UNDS, KC_RSFT,
+    //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                        //  KC_LGUI, _______,  KC_SPC,     KC_ENT, _______, KC_LALT
+                                        //`--------------------------'  `--------------------------'
+
+    // [L_RIGHT] = LAYOUT_split_3x6_3(
+    //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+    //  KC_CAPS, ES_EXLM, ES_DQUO, ES_HASH, ES_CIRC, XXXXXXX,                      ES_ASTR,    ES_7,    ES_8,    ES_9, ES_MINS, KC_BSPC,
+    //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+    //  KC_LCTL, ES_LCBR, ES_RCBR, ES_LPRN, ES_RPRN, ES_QUES,                      ES_SLSH,    ES_4,    ES_5,    ES_6, ES_PLUS, ES_QUOT,
+    //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+    //  KC_LSFT, ES_LBRC, ES_RBRC, ES_LABK, ES_RABK,  ES_EQL,                         ES_0,    ES_1,    ES_2,    ES_3,  ES_DOT, KC_RSFT,
+    //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                        //  KC_LGUI, _______,  KC_SPC,     KC_ENT, _______, KC_LALT
+                                        //`--------------------------'  `--------------------------'
+
+    // [L_UPPER_RIGHT] = LAYOUT_split_3x6_3(
+    //,-----------------------------------------------------.                    ,-----------------------------------------------------.
+    //  XXXXXXX, ES_IEXL,   ES_AT, ES_EURO,  ES_DLR, XXXXXXX,                      XXXXXXX, XXXXXXX, XXXXXXX, ES_MORD, XXXXXXX, KC_BSPC,
+    //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+    //  KC_LCTL, ES_FORD, ES_AMPR, ES_PIPE, ES_BSLS, ES_IQUE,                      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, ES_TILD,  ES_GRV,
+    //|--------+--------+--------+--------+--------+--------|                    |--------+--------+--------+--------+--------+--------|
+    //  KC_LSFT, XXXXXXX,  ES_NOT, ES_CCED, ES_PERC, XXXXXXX,                      RGB_TOG, RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, KC_RSFT,
+    //|--------+--------+--------+--------+--------+--------+--------|  |--------+--------+--------+--------+--------+--------+--------|
+                                        //  KC_LGUI, _______,  KC_SPC,     KC_ENT, _______, KC_LALT
+                                        //`--------------------------'  `--------------------------'
+
+
+*/
